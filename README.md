@@ -5,6 +5,6 @@ The configs that I use for linting stuff. Ships as python package so usage is ea
 ## Usage
 
 ```sh
-uv add git+https://github.com/alexfayers/fayers-configs
+uv add --group dev git+https://github.com/alexfayers/fayers-configs
 uv run fayers-configs install
 ```
