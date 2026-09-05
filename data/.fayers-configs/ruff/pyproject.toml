@@ -1,0 +1,99 @@
+[tool.ruff]
+line-length = 120
+indent-width = 4
+show-fixes = true
+preview = true
+target-version = "py312"
+# unsafe-fixes = true
+extend-exclude = ["build"]
+
+[tool.ruff.lint]
+future-annotations = true
+extend-ignore = [
+    "missing-trailing-comma",
+    "undocumented-public-module",
+    "undocumented-public-class",
+    "undocumented-public-package",
+    "undocumented-magic-method",
+    "undocumented-public-init",
+    "FIX",
+    "useless-import-alias",
+    "missing-todo-author",
+    "missing-todo-link",
+    "non-pep695-type-alias",
+    "boolean-type-hint-positional-argument",  # maybe useful, but annoying
+    "boolean-default-value-positional-argument",  # maybe useful, but annoying
+    "missing-copyright-notice",
+    "if-else-block-instead-of-if-exp",
+    "docstring-extraneous-exception",
+    "suspicious-subprocess-import",
+    "subprocess-without-shell-equals-true",
+    "suspicious-non-cryptographic-random-usage",
+    "no-self-use",
+    "complex-structure",
+    "float-equality-comparison"
+]
+extend-safe-fixes = [
+    "ANN",
+    "EM",
+    "typing-only-first-party-import",
+    "typing-only-third-party-import",
+    "typing-only-standard-library-import",
+    "runtime-import-in-type-checking-block",
+    "relative-imports",
+    "non-pep604-annotation-optional",
+    "non-pep585-annotation",
+    "logging-f-string",
+    "missing-terminal-punctuation",
+    "blank-line-with-whitespace",
+]
+unfixable = ["print"]
+select = ["ALL"]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"scripts/*" = ["print"]
+"*test*" = [
+    "print",
+    "missing-type-function-argument",
+    "missing-return-type-undocumented-public-function",
+    "missing-return-type-private-function",
+    "unused-method-argument",
+    "undocumented-public-method",
+    "undocumented-public-function",
+    "magic-value-comparison",
+    "assert",
+    "private-member-access",
+    "implicit-namespace-package",
+    "magic-value-comparison",
+    "import-outside-top-level",
+    "literal-membership",
+    "too-many-public-methods",
+    "no-self-use",
+    "DOC",
+    "import-private-name",
+    "invalid-function-name",
+    "compare-to-empty-string",
+    "boolean-positional-value-in-call",
+    "unused-function-argument",
+    "raw-string-in-exception",
+    "unused-async",
+]
+
+[tool.ruff.lint.flake8-annotations]
+allow-star-arg-any = true
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-sort-within-sections = true
+force-wrap-aliases = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+ignore-var-parameters = true
+
+[tool.ruff.lint.pycodestyle]
+ignore-overlong-task-comments = true
+max-doc-length = 150
+
+[tool.ruff.lint.flake8-unused-arguments]
+ignore-variadic-names = true

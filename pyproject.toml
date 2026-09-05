@@ -1,0 +1,34 @@
+[project]
+name = "fayers-configs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "alexfayers", email = "alex@fayers.com" },
+]
+requires-python = ">=3.8"
+dependencies = [
+    "ruff>=0.16.6",
+    "tomli-w>=1.0.0",
+]
+
+[project.scripts]
+fayers-configs = "fayers_configs.cli:main"
+
+[build-system]
+requires = [
+    "uv_build>=0.12.5,<0.13.0",
+]
+build-backend = "uv_build"
+
+[tool.uv]
+cache-keys = [{ file = "data/**" }]
+
+[tool.uv.build-backend.data]
+data = "data"
+
+[tool.ruff]
+extend = ".venv/.fayers-configs/ruff/pyproject.toml"
+
+[tool.ruff.lint]
+extend-ignore = ["print"]

@@ -22,7 +22,7 @@ while IFS= read -r -d '' directory; do
 
     # shellcheck disable=SC1090
     source "$INSTALL_ENV_FILE" && link-config "$SOURCE_FILE" "$DESTINATION_DIR" && ((installed_count++))
-done < <(find "$SCRIPT_DIR" -type d -mindepth 1 -maxdepth 1 -not -name '.*' -print0)
+done < <(find "$SCRIPT_DIR/../data/.fayers-configs" -type d -mindepth 1 -maxdepth 1 -not -name '.*' -print0)
 
 [ $installed_count -eq 1 ] && config_word="config" || config_word="configs"
 
