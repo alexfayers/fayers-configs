@@ -31,7 +31,9 @@ extend-ignore = [
     "suspicious-non-cryptographic-random-usage",
     "no-self-use",
     "complex-structure",
-    "float-equality-comparison"
+    "float-equality-comparison",
+    "flake8-errmsg",
+    "raise-vanilla-args"
 ]
 extend-safe-fixes = [
     "ANN",
