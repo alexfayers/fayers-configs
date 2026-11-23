@@ -32,7 +32,7 @@ extend-ignore = [
     "no-self-use",
     "complex-structure",
     "float-equality-comparison",
-    "flake8-errmsg",
+    "EM",
     "raise-vanilla-args"
 ]
 extend-safe-fixes = [
